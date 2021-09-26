@@ -9,7 +9,7 @@ public class SkinPicker : MonoBehaviour
     [SerializeField] private Sprite[] allSkins;
 
     [Header("Slots")]
-    [SerializeField] private Image[] allSlots= new Image[20];
+    [SerializeField] private Image[] allSlots= new Image[21];
 
     void Start()
     {
@@ -38,38 +38,22 @@ public class SkinPicker : MonoBehaviour
     void RandomWinner()
     {
         int randomWinner = Random.Range(0, 101);
+        if (randomWinner > 95)
+        {
+            allSlots[20].sprite = allSkins[2]; // Knife %5
+            print("BIÇAK GELDÝ"+randomWinner);
+        }
+        else if (randomWinner>75)
+        {
+            allSlots[20].sprite = allSkins[1]; // EX %25
+            print("SMG GELDÝ"+randomWinner);
 
-        if (randomWinner > 99)
-        {
-            allSlots[20].sprite = allSkins[3]; // Knife %1
         }
-        else if (randomWinner > 90)
+        else if (randomWinner > 50 || randomWinner<50)
         {
-            allSlots[20].sprite = allSkins[2]; // EXAMPLE %10
-        }
-        else if (randomWinner > 80)
-        {
-            allSlots[20].sprite = allSkins[1]; // EXAMPLE %20
-        }
-        else if (randomWinner > 70)
-        {
-            allSlots[20].sprite = allSkins[0]; // EXAMPLE %30
-        }
-        else if (randomWinner > 60)
-        {
-            allSlots[20].sprite = allSkins[0]; // EXAMPLE %40
-        }
-        else if (randomWinner > 50)
-        {
-            allSlots[20].sprite = allSkins[0]; // EXAMPLE %50
-        }
-        else if (randomWinner > 40)
-        {
-            allSlots[20].sprite = allSkins[0]; // EXAMPLE %60
-        }
-        else if (randomWinner > 30)
-        {
-            allSlots[20].sprite = allSkins[0]; // EXAMPLE %70
+            allSlots[20].sprite = allSkins[0]; // EX %50
+            print("GLOCK GELDÝ"+randomWinner);
+
         }
     }
 }
