@@ -8,8 +8,25 @@ public class SkinPicker : MonoBehaviour
     [Header("Skins")]
     [SerializeField] private Sprite[] allSkins;
 
+    /* 0 = AUG - BLUE
+     * 1 = G3SG1 - BLUE
+     * 2 = MP7 - BLUE
+     * 3 = PP-BIZON - BLUE
+     * 4 = USP-S - BLUE
+     * 5 = MAG7 - PURPLE
+     * 6 = FAMAS - PURPLE
+     * 7 = FIVE SEVEN - PURPLE
+     * 8 = M4A4 - PURPLE
+     * 9 = MAC-10 - PINK
+     * 10 = GLOCK-18 - PINK
+     * 11 = SSG-08 - PINK
+     * 12 = AK-47 - RED
+     * 13 = DESERT EAGLE - RED
+     * 14 = Butterfly - Yellow
+     * */
+
     [Header("Slots")]
-    [SerializeField] private Image[] allSlots= new Image[21];
+    [SerializeField] private Image[] allSlots;
 
     void Start()
     {
@@ -21,15 +38,43 @@ public class SkinPicker : MonoBehaviour
     {
         for (int i = 0; i < allSlots.Length - 1; i++)
         {
-            int randomSkin = Random.Range(0, 3);
+            int randomSkin = Random.Range(0, 10);
             switch (randomSkin)
             {
                 case 1:
-                    allSlots[i].sprite = allSkins[0];
+                    allSlots[i].sprite = allSkins[0]; // AUG - BLUE
                     break;
 
                 case 2:
-                    allSlots[i].sprite = allSkins[1];
+                    allSlots[i].sprite = allSkins[1]; // G3SG1 - BLUE
+                    break;
+
+                case 3:
+                    allSlots[i].sprite = allSkins[2]; // MP7 - BLUE
+                    break;
+
+                case 4:
+                    allSlots[i].sprite = allSkins[3]; // PP-BIZON - BLUE
+                    break;
+
+                case 5:
+                    allSlots[i].sprite = allSkins[4]; // USP-S - BLUE
+                    break;
+
+                case 6:
+                    allSlots[i].sprite = allSkins[5]; // MAG7 - PURPLE
+                    break;
+
+                case 7:
+                    allSlots[i].sprite = allSkins[6]; // FAMAS - PURPLE
+                    break;
+
+                case 8:
+                    allSlots[i].sprite = allSkins[7]; // FIVE SEVEN - PURPLE
+                    break;
+
+                case 9:
+                    allSlots[i].sprite = allSkins[8]; // M4A4 - PURPLE
                     break;
             }
         }
@@ -38,22 +83,97 @@ public class SkinPicker : MonoBehaviour
     void RandomWinner()
     {
         int randomWinner = Random.Range(0, 101);
-        if (randomWinner > 95)
-        {
-            allSlots[20].sprite = allSkins[2]; // Knife %5
-            print("BIÇAK GELDÝ"+randomWinner);
-        }
-        else if (randomWinner>75)
-        {
-            allSlots[20].sprite = allSkins[1]; // EX %25
-            print("SMG GELDÝ"+randomWinner);
+        print(randomWinner);
 
-        }
-        else if (randomWinner > 50 || randomWinner<50)
+        if (randomWinner > 95)  // %5 Chance
         {
-            allSlots[20].sprite = allSkins[0]; // EX %50
-            print("GLOCK GELDÝ"+randomWinner);
+            allSlots[23].sprite = allSkins[14];
+        }
 
+        else if (randomWinner > 90) // %10 Chance
+        {
+            int randomRedPicker = Random.Range(0, 3);
+
+            switch (randomRedPicker) 
+            {
+                case 1:
+                    allSlots[23].sprite = allSkins[13];
+                    break;
+
+                case 2:
+                    allSlots[23].sprite = allSkins[12];
+                    break;
+            }
+        }
+
+        else if (randomWinner > 80) // %20 Chance
+        {
+            int randomPinkPicker = Random.Range(0, 4);
+
+            switch (randomPinkPicker)
+            {
+                case 1:
+                    allSlots[23].sprite = allSkins[11];
+                    break;
+
+                case 2:
+                    allSlots[23].sprite = allSkins[10];
+                    break;
+
+                case 3:
+                    allSlots[23].sprite = allSkins[9];
+                    break;
+            }
+        }
+
+        else if (randomWinner > 60) // %40 Chance
+        {
+            int randomPurplePicker = Random.Range(0, 5);
+            switch (randomPurplePicker)
+            {
+                case 1:
+                    allSlots[23].sprite = allSkins[8];
+                    break;
+
+                case 2:
+                    allSlots[23].sprite = allSkins[7];
+                    break;
+
+                case 3:
+                    allSlots[23].sprite = allSkins[6];
+                    break;
+
+                case 4:
+                    allSlots[23].sprite = allSkins[5];
+                    break;
+            }
+        }
+
+        else // %100 Chance
+        {
+            int randomBluePicker = Random.Range(0, 6);
+            switch (randomBluePicker)
+            {
+                case 1:
+                    allSlots[23].sprite = allSkins[4];
+                    break;
+
+                case 2:
+                    allSlots[23].sprite = allSkins[3];
+                    break;
+
+                case 3:
+                    allSlots[23].sprite = allSkins[2];
+                    break;
+
+                case 4:
+                    allSlots[23].sprite = allSkins[1];
+                    break;
+
+                case 5:
+                    allSlots[23].sprite = allSkins[0];
+                    break;
+            }
         }
     }
 }
