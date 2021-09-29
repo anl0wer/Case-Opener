@@ -38,8 +38,7 @@ public class SkinPicker : MonoBehaviour
     {
         for (int i = 0; i < allSlots.Length - 1; i++)
         {
-            int randomSkin = Random.Range(0, 10);
-            switch (randomSkin)
+            switch (Random.Range(0, 10))
             {
                 case 1:
                     allSlots[i].sprite = allSkins[0]; // AUG - BLUE
@@ -92,9 +91,7 @@ public class SkinPicker : MonoBehaviour
 
         else if (randomWinner > 90) // %10 Chance
         {
-            int randomRedPicker = Random.Range(0, 3);
-
-            switch (randomRedPicker) 
+            switch (Random.Range(0, 3)) 
             {
                 case 1:
                     allSlots[23].sprite = allSkins[13];
@@ -108,9 +105,7 @@ public class SkinPicker : MonoBehaviour
 
         else if (randomWinner > 80) // %20 Chance
         {
-            int randomPinkPicker = Random.Range(0, 4);
-
-            switch (randomPinkPicker)
+            switch (Random.Range(0, 4))
             {
                 case 1:
                     allSlots[23].sprite = allSkins[11];
@@ -128,8 +123,7 @@ public class SkinPicker : MonoBehaviour
 
         else if (randomWinner > 60) // %40 Chance
         {
-            int randomPurplePicker = Random.Range(0, 5);
-            switch (randomPurplePicker)
+            switch (Random.Range(0, 5))
             {
                 case 1:
                     allSlots[23].sprite = allSkins[8];
@@ -151,8 +145,7 @@ public class SkinPicker : MonoBehaviour
 
         else // %100 Chance
         {
-            int randomBluePicker = Random.Range(0, 6);
-            switch (randomBluePicker)
+            switch (Random.Range(0, 6))
             {
                 case 1:
                     allSlots[23].sprite = allSkins[4];
