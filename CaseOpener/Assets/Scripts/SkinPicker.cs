@@ -84,7 +84,7 @@ public class SkinPicker : MonoBehaviour
         int randomWinner = Random.Range(0, 101);
         print(randomWinner);
 
-        if (randomWinner > 95)  // %5 Chance
+        if (randomWinner > 97)  // %3 Chance
         {
             allSlots[23].sprite = allSkins[14];
         }
