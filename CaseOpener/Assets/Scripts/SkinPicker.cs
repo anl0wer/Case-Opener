@@ -28,7 +28,7 @@ public class SkinPicker : MonoBehaviour
     [Header("Slots")]
     [SerializeField] private Image[] allSlots;
 
-    void Start()
+    public void OpenCase()
     {
         RandomSkinPlacement();
         RandomWinner();
