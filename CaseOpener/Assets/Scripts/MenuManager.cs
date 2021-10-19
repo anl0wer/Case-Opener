@@ -8,6 +8,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private CanvasGroup menuPanel;
     [SerializeField] private CanvasGroup caseOpeningPanel;
 
+    [Header("Classes")]
+    [SerializeField] private SkinPicker skinPicker;
+
     public void OpenCasePanel()
     {
         menuPanel.alpha = 0;
@@ -28,5 +31,10 @@ public class MenuManager : MonoBehaviour
         caseOpeningPanel.alpha = 0;
         caseOpeningPanel.interactable = false;
         caseOpeningPanel.blocksRaycasts = false;
+    }
+
+    public void OpenCase()
+    {
+        skinPicker.OpenCase();
     }
 }

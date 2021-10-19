@@ -2024,6 +2024,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 755046259}
   caseOpeningPanel: {fileID: 583681879}
+  skinPicker: {fileID: 1262951389}
 --- !u!4 &1248753623
 Transform:
   m_ObjectHideFlags: 0
@@ -2108,6 +2109,8 @@ MonoBehaviour:
   - {fileID: 1305320118}
   - {fileID: 457184659}
   - {fileID: 2140357690}
+  caseOpening: 0
+  caseAnimation: {fileID: 1540786196}
 --- !u!4 &1262951390
 Transform:
   m_ObjectHideFlags: 0
@@ -3443,6 +3446,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1248753622}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: OpenCasePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1248753622}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: OpenCase
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

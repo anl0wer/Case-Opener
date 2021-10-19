@@ -28,8 +28,18 @@ public class SkinPicker : MonoBehaviour
     [Header("Slots")]
     [SerializeField] private Image[] allSlots;
 
+    [HideInInspector] public bool caseOpening;
+
+    [SerializeField] private Animator caseAnimation;
+
     public void OpenCase()
     {
+        caseOpening = true;
+        if (caseOpening)
+        {
+            caseAnimation.SetBool("isCaseOpened", true);
+            caseOpening = false;
+        }
         RandomSkinPlacement();
         RandomWinner();
     }
