@@ -42,6 +42,14 @@ public class MenuManager : MonoBehaviour
         winnerSkinPanel.interactable = false;
         winnerSkinPanel.blocksRaycasts = false;
 
+    }
+
+    public void CloseWinnerSkinPanelAll()
+    {
+        winnerSkinPanel.alpha = 0;
+        winnerSkinPanel.interactable = false;
+        winnerSkinPanel.blocksRaycasts = false;
+
         CloseCasePanel();
     }
 
