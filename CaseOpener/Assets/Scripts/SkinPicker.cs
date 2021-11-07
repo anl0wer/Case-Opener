@@ -46,6 +46,7 @@ public class SkinPicker : MonoBehaviour
     public void OpenCase()
     {
         caseOpening = true;
+
         if (caseOpening)
         {
             caseAnimation.SetBool("isCaseOpened", true);
@@ -54,6 +55,7 @@ public class SkinPicker : MonoBehaviour
             caseOpening = false;
             
         }
+
         RandomSkinPlacement();
         RandomWinner();
     }

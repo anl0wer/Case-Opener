@@ -45,6 +45,12 @@ public class MenuManager : MonoBehaviour
         CloseCasePanel();
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+        print("Quitted");
+    }
+
     public void OpenCase()
     {
         SkinPicker.instance.OpenCase();
