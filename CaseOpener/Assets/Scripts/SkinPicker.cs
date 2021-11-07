@@ -1,13 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
 
 public class SkinPicker : MonoBehaviour
 {
-    [Header("Skins")]
-    [SerializeField] private Sprite[] allSkins;
-
     /* 0 = AUG - BLUE
      * 1 = G3SG1 - BLUE
      * 2 = MP7 - BLUE
@@ -25,12 +21,27 @@ public class SkinPicker : MonoBehaviour
      * 14 = Butterfly - Yellow
      * */
 
+    public static SkinPicker instance;
+
+    [Header("Skins")]
+    public Sprite[] allSkins;
+
     [Header("Slots")]
     [SerializeField] private Image[] allSlots;
 
     [HideInInspector] public bool caseOpening;
 
-    [SerializeField] private Animator caseAnimation;
+    [SerializeField] public Animator caseAnimation;
+
+    [Header("WinnerSkin")]
+    [HideInInspector] public int winnerSkinIndex;
+    public TMP_Text winnerSkinText; 
+    public Image winnerSkinImage;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     public void OpenCase()
     {
@@ -38,7 +49,10 @@ public class SkinPicker : MonoBehaviour
         if (caseOpening)
         {
             caseAnimation.SetBool("isCaseOpened", true);
+            
+            AudioManager.instance.Play("CaseOpening");
             caseOpening = false;
+            
         }
         RandomSkinPlacement();
         RandomWinner();
@@ -97,6 +111,7 @@ public class SkinPicker : MonoBehaviour
         if (randomWinner > 97)  // %3 Chance
         {
             allSlots[23].sprite = allSkins[14];
+            winnerSkinIndex = 14;
         }
 
         else if (randomWinner > 90) // %10 Chance
@@ -105,10 +120,12 @@ public class SkinPicker : MonoBehaviour
             {
                 case 1:
                     allSlots[23].sprite = allSkins[13];
+                    winnerSkinIndex = 13;
                     break;
 
                 case 2:
                     allSlots[23].sprite = allSkins[12];
+                    winnerSkinIndex = 12;
                     break;
             }
         }
@@ -119,14 +136,17 @@ public class SkinPicker : MonoBehaviour
             {
                 case 1:
                     allSlots[23].sprite = allSkins[11];
+                    winnerSkinIndex = 11;
                     break;
 
                 case 2:
                     allSlots[23].sprite = allSkins[10];
+                    winnerSkinIndex = 10;
                     break;
 
                 case 3:
                     allSlots[23].sprite = allSkins[9];
+                    winnerSkinIndex = 9;
                     break;
             }
         }
@@ -137,18 +157,22 @@ public class SkinPicker : MonoBehaviour
             {
                 case 1:
                     allSlots[23].sprite = allSkins[8];
+                    winnerSkinIndex = 8;
                     break;
 
                 case 2:
                     allSlots[23].sprite = allSkins[7];
+                    winnerSkinIndex = 7;
                     break;
 
                 case 3:
                     allSlots[23].sprite = allSkins[6];
+                    winnerSkinIndex = 6;
                     break;
 
                 case 4:
                     allSlots[23].sprite = allSkins[5];
+                    winnerSkinIndex = 5;
                     break;
             }
         }
@@ -159,22 +183,27 @@ public class SkinPicker : MonoBehaviour
             {
                 case 1:
                     allSlots[23].sprite = allSkins[4];
+                    winnerSkinIndex = 4;
                     break;
 
                 case 2:
                     allSlots[23].sprite = allSkins[3];
+                    winnerSkinIndex = 3;
                     break;
 
                 case 3:
                     allSlots[23].sprite = allSkins[2];
+                    winnerSkinIndex = 2;
                     break;
 
                 case 4:
                     allSlots[23].sprite = allSkins[1];
+                    winnerSkinIndex = 1;
                     break;
 
                 case 5:
                     allSlots[23].sprite = allSkins[0];
+                    winnerSkinIndex = 0;
                     break;
             }
         }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MenuManager : MonoBehaviour
@@ -7,9 +5,7 @@ public class MenuManager : MonoBehaviour
     [Header("Panels")]
     [SerializeField] private CanvasGroup menuPanel;
     [SerializeField] private CanvasGroup caseOpeningPanel;
-
-    [Header("Classes")]
-    [SerializeField] private SkinPicker skinPicker;
+    [SerializeField] private CanvasGroup winnerSkinPanel;
 
     public void OpenCasePanel()
     {
@@ -33,8 +29,24 @@ public class MenuManager : MonoBehaviour
         caseOpeningPanel.blocksRaycasts = false;
     }
 
+    public void OpenWinnerSkinPanel()
+    {
+        winnerSkinPanel.alpha = 1;
+        winnerSkinPanel.interactable = true;
+        winnerSkinPanel.blocksRaycasts = true;
+    }
+
+    public void CloseWinnerSkinPanel()
+    {
+        winnerSkinPanel.alpha = 0;
+        winnerSkinPanel.interactable = false;
+        winnerSkinPanel.blocksRaycasts = false;
+
+        CloseCasePanel();
+    }
+
     public void OpenCase()
     {
-        skinPicker.OpenCase();
+        SkinPicker.instance.OpenCase();
     }
 }
