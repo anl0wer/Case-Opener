@@ -6,6 +6,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private CanvasGroup menuPanel;
     [SerializeField] private CanvasGroup caseOpeningPanel;
     [SerializeField] private CanvasGroup winnerSkinPanel;
+    [SerializeField] private CanvasGroup settingsPanel;
 
     public void OpenCasePanel()
     {
@@ -27,6 +28,21 @@ public class MenuManager : MonoBehaviour
         caseOpeningPanel.alpha = 0;
         caseOpeningPanel.interactable = false;
         caseOpeningPanel.blocksRaycasts = false;
+    }
+
+    public void OpenSettingsPanel()
+    {
+
+        settingsPanel.alpha = 1;
+        settingsPanel.interactable = true;
+        settingsPanel.blocksRaycasts = true;
+    }
+
+    public void CloseSettingsPanel()
+    { 
+        settingsPanel.alpha = 0;
+        settingsPanel.interactable = false;
+        settingsPanel.blocksRaycasts = false;
     }
 
     public void OpenWinnerSkinPanel()
