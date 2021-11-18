@@ -123,9 +123,7 @@ public class WinnerSkin : MonoBehaviour
         }
 
         SkinPicker.instance.caseAnimation.Rebind();
-        SkinPicker.instance.caseAnimation.Update(0f);
 
-        menu.OpenWinnerSkinPanel();
-        
+        menu.OpenWinnerSkinPanel();    
     }
 }
